@@ -1,0 +1,89 @@
+﻿@model GEZAPV3.Models.Persona
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Persona</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DIdentidad" />
+            <div class="form-group">
+                <label asp-for="IdTipoP" class="control-label"></label>
+                <select asp-for="IdTipoP" class="form-control" asp-items="ViewBag.IdTipoP"></select>
+                <span asp-validation-for="IdTipoP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdUsers" class="control-label"></label>
+                <select asp-for="IdUsers" class="form-control" asp-items="ViewBag.IdUsers"></select>
+                <span asp-validation-for="IdUsers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PNombre" class="control-label"></label>
+                <input asp-for="PNombre" class="form-control" />
+                <span asp-validation-for="PNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SNombre" class="control-label"></label>
+                <input asp-for="SNombre" class="form-control" />
+                <span asp-validation-for="SNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PApellido" class="control-label"></label>
+                <input asp-for="PApellido" class="form-control" />
+                <span asp-validation-for="PApellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SApellido" class="control-label"></label>
+                <input asp-for="SApellido" class="form-control" />
+                <span asp-validation-for="SApellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoD" class="control-label"></label>
+                <input asp-for="TipoD" class="form-control" />
+                <span asp-validation-for="TipoD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FNacimiento" class="control-label"></label>
+                <input asp-for="FNacimiento" class="form-control" />
+                <span asp-validation-for="FNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sexo" class="control-label"></label>
+                <input asp-for="Sexo" class="form-control" />
+                <span asp-validation-for="Sexo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CElectronico" class="control-label"></label>
+                <input asp-for="CElectronico" class="form-control" />
+                <span asp-validation-for="CElectronico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Direccion" class="control-label"></label>
+                <input asp-for="Direccion" class="form-control" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

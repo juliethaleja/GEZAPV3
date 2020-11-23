@@ -1,0 +1,101 @@
+﻿@model IEnumerable<GEZAPV3.Models.Persona>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PApellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SApellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sexo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CElectronico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipoPNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUsersNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PNombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SNombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PApellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SApellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CElectronico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoPNavigation.NombreP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsersNavigation.Contraseña)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DIdentidad">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DIdentidad">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DIdentidad">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
